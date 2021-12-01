@@ -10,13 +10,12 @@ public class RandomArray {
         Random r = new Random();
         for (int i = 0; i < randomArray.length; i++) {
             randomArray[i] = r.nextInt(100);
-
-            // printed the random array with length 10
         }
         return randomArray;
     }
 
     public ArrayList<Integer> randomArrayList (Integer arrayListLength) {
+
         ArrayList<Integer> al = new ArrayList<>(arrayListLength);
         int pick;
         Random rand = new Random();
