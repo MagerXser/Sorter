@@ -1,9 +1,6 @@
 package com.sparta.sorter.controller;
 
-import com.sparta.sorter.model.Bubblesort;
-import com.sparta.sorter.model.Quicksort;
-import com.sparta.sorter.model.RandomArray;
-import com.sparta.sorter.model.Sorter;
+import com.sparta.sorter.model.*;
 
 import java.util.*;
 
@@ -12,54 +9,63 @@ public class SortDriver {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        RandomArray Ra = new RandomArray();
+        Choosing c = new Choosing();
+        boolean go = true;
+        boolean run = true;
 
-        System.out.println("Type: " + "\n" + "1 for Bubblesort" + "\n" + "2 for Quicksort"  + "\n"
-                + "3 for Bubblesort ArrayList" + "\n" +  "4 for QuickSort ArrayList");
+        System.out.println("Type: " + "\n" + "1 for Bubblesort" + "\n" + "2 for Quicksort" + "\n"
+                + "3 for Bubblesort ArrayList" + "\n" + "4 for QuickSort ArrayList" + "\n" + "5 for Binary Tree Sort"
+                + "\n" + "6 to Exit");
 
-        int input = in.nextInt();
-        if (input == 1) {
-
-            System.out.println("Bubblesort chosen");
-            int[] randomArray = Ra.randomArray(10);
-            System.out.println(Arrays.toString(randomArray));
-            Sorter bubblesort = new Bubblesort();
-            long startTime = System.nanoTime();
-            bubblesort.sort(randomArray);
-            long endTime = System.nanoTime();
-            System.out.println(Arrays.toString(randomArray) + "\n BubbleSort Array runtime: " + (endTime - startTime));
-
-        }else if (input == 2) {
-
-            System.out.println();
-            Quicksort qs = new Quicksort();
-            int [] randomArray = Ra.randomArray(10);
-            System.out.println(Arrays.toString(randomArray));
-            long startTime = System.nanoTime();
-            qs.sort(randomArray);
-            long endTime = System.nanoTime();
-            System.out.println(Arrays.toString(randomArray) + "\n QuickSort Array runtime: " + (endTime - startTime));
-
-        }else if (input == 3) {
-
-            ArrayList<Integer> randomArrayList = Ra.randomArrayList(10);
-            Sorter bs = new Bubblesort();
-            System.out.println(randomArrayList);
-            long startTime = System.nanoTime();
-            bs.sort(randomArrayList);
-            long endTime = System.nanoTime();
-            System.out.println(randomArrayList + "\n BubbleSort ArrayList runtime: " + (endTime - startTime));
-
-        }else if (input == 4) {
-            ArrayList<Integer> randomArrayList = Ra.randomArrayList(10);
-            Sorter qs = new Quicksort();
-            System.out.println(randomArrayList);
-            long startTime = System.nanoTime();
-            qs.sort(randomArrayList);
-            long endTime = System.nanoTime();
-            System.out.println(randomArrayList + "\n QuickSort ArrayList runtime: " + (endTime - startTime));
-
+        while (go == true){
+            while(run) {
+                int input = in.nextInt();
+                if (input == 1) {
+                    c.BubbleArrayChosen();
+                    run = false;
+                    wait(2000);
+                } else if (input == 2) {
+                    c.QuickSortArrayChosen();
+                    run = false;
+                    wait(2000);
+                } else if (input == 3) {
+                    c.BubbleArrayListChosen();
+                    run = false;
+                    wait(2000);
+                } else if (input == 4) {
+                    c.QuicksortArrayListChosen();
+                    run = false;
+                    wait(2000);
+                } else if (input == 5){
+                    c.BinaryTreeSort();
+                    run = false;
+                    wait(2000);
+                }  else if (input == 6) {
+                    System.out.println("Goodbye.");
+                    go = false;
+                }else {
+                    System.out.println("Incorrect Input, please try again");
+                    run = true;
+                }if (run==false)
+                    System.out.println("\n" + "Type: " + "\n" + "1 for Bubblesort" + "\n" + "2 for Quicksort" + "\n"
+                            + "3 for Bubblesort ArrayList" + "\n" + "4 for QuickSort ArrayList" + "\n" + "5 for Binary Tree Sort"
+                            + "\n" + "6 to Exit");
+                if (input == 1 || input == 2 || input == 3 || input == 4) {
+                    run = true;
+                }
+            }
         }
     }
 
+    public static void wait(int ms)
+    {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
+    }
 }

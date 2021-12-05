@@ -1,6 +1,7 @@
 package com.sparta.sorter.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bubblesort implements Sorter {
 
@@ -40,4 +41,6 @@ public class Bubblesort implements Sorter {
         }
         return arrayList;
     }
+
+
 }

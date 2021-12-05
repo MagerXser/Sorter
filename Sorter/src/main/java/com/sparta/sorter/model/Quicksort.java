@@ -32,6 +32,7 @@ public class Quicksort implements Sorter {
         }
         return A;
     }
+
     public void swap (int [] A, int index1, int index2) {
         int temp = A[index1];
         A[index1] = A[index2];
