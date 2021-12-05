@@ -35,7 +35,7 @@ functions that the applications has.
 
 *This is the menu that will come out when you start the application as the console:
 
-![](screenshots\console.png)
+![](screenshots/console.png)
 
 Each of the options is able to take you through each of the different Array or ArrayList types that are generic. The Arrays and the ArrayLists
 are all randomised so that automatic creation of Arrays and ArrayList can be formed instead of using the same ones.
@@ -47,7 +47,7 @@ List<T> sort(List<T> arrayList);
 }
 ```
 
-![](screenshots\bubblesort.png)
+![](screenshots/bubblesort.png)
 
 ### Design Patterns
 
@@ -55,14 +55,14 @@ List<T> sort(List<T> arrayList);
 
 This is the design pattern that I have used for my project to show how the classes in my project interact with each other.
 
-![](screenshots\mvc.png)
+![](screenshots/mvc.png)
 
 ### Testing 
 
 Not a lot went into testing as most of my time was on refactoring my code. I have implemented a JUnit test to test if my code works 
 to create the correct array after it has been put through the methods that I have written. 
 
-![](screenshots\test.png)
+![](screenshots/test.png)
 
 ### Logging
 I have also included just a simple logging to give information that the program has started but this will be also updated to have other logging
