@@ -10,6 +10,7 @@ public class SortDriver {
 
         Scanner in = new Scanner(System.in);
         Choosing c = new Choosing();
+        BinaryTreeSort bts = new BinaryTreeSort();
         boolean go = true;
         boolean run = true;
 
@@ -37,7 +38,7 @@ public class SortDriver {
                     run = false;
                     wait(2000);
                 } else if (input == 5){
-                    c.BinaryTreeSort();
+                    bts.BinaryTreeSort();
                     run = false;
                     wait(2000);
                 }  else if (input == 6) {

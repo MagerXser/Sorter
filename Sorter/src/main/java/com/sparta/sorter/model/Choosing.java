@@ -3,7 +3,7 @@ package com.sparta.sorter.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Choosing {
+public class Choosing<T extends Comparable<? super T>> {
 
     RandomArray Ra = new RandomArray();
     Quicksort qs = new Quicksort();
@@ -13,7 +13,7 @@ public class Choosing {
     public void BubbleArrayChosen() {
 
         System.out.println("Bubblesort chosen");
-        int[] randomArray = Ra.randomArray(100);
+        T[] randomArray = (T[]) Ra.randomArray(100);
         System.out.println(Arrays.toString(randomArray));
         long startTime = System.nanoTime();
         bs.sort(randomArray);
@@ -24,7 +24,7 @@ public class Choosing {
     public void QuickSortArrayChosen() {
 
         System.out.println();
-        int [] randomArray = Ra.randomArray(100);
+        T[] randomArray = (T[]) Ra.randomArray(100);
         System.out.println(Arrays.toString(randomArray));
         long startTime = System.nanoTime();
         qs.sort(randomArray);
@@ -49,15 +49,5 @@ public class Choosing {
         qs.sort(randomArrayList);
         long endTime = System.nanoTime();
         System.out.println(randomArrayList + "\n QuickSort ArrayList runtime: " + (endTime - startTime));
-    }
-
-    public void BinaryTreeSort () {
-        int [] randomArray = Ra.randomArray(5);
-        System.out.println(Arrays.toString(randomArray));
-        long startTime = System.nanoTime();
-        bts.root = bts.insertLevelOrder(randomArray, bts.root, 0);
-        bts.inOrder(bts.root);
-        long endTime = System.nanoTime();
-        System.out.println("\n Binary Tree Sort runtime: " + (endTime - startTime));
     }
 }
